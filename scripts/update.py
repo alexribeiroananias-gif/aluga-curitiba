@@ -1,6 +1,6 @@
 import json, os, urllib.request, datetime, pathlib, math
 root=pathlib.Path(__file__).resolve().parents[1]
-urls=json.loads(os.environ.get('FEED_URLS','[]'))
+urls=json.loads(os.environ.get('FEED_URLS') or '[]')
 if not urls: raise SystemExit('Configure FEED_URLS com feeds JSON autorizados.')
 items={}
 for url in urls:
